@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { visuels } from "@/assets/visuels";
 import { Ban, BadgeCheck, Clock, Settings2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/sections/page-hero";
@@ -21,7 +22,7 @@ const rules = [
 export default function ReferralPage() {
   return (
     <>
-      <PageHero eyebrow="Parrainage" title="Apprenez ensemble, avancez ensemble." description="Partagez FINORA Academy avec vos proches grâce à votre lien personnel, disponible dans votre espace adhérent." />
+      <PageHero visual={visuels.tirelire} eyebrow="Parrainage" title="Apprenez ensemble, avancez ensemble." description="Partagez FINORA Academy avec vos proches grâce à votre lien personnel, disponible dans votre espace adhérent." />
       <Referral withCta={false} />
       <section className="pb-20">
         <Container>

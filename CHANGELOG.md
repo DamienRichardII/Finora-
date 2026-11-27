@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0] — 2026-11-27 — Visuels
+
+### Ajouté
+- 5 visuels d'ambiance (natures mortes, aucune personne) convertis en WebP (73 à 97 Ko), dans `src/assets/visuels` : images responsives `next/image`, flou de chargement, textes alternatifs.
+- Hero : visuel globe et livre assombri derrière le logo. Pages Formations, Ateliers, Parrainage, À propos : bannière visuelle.
+- Vignettes des 8 modules et panneau vidéo des pages module illustrés ; section fondateur illustrée sans être présentée comme une photo de Chris.
+
 ## [0.4.0] — 2026-11-27 — Mise en production du site vitrine
 
 ### Modifié

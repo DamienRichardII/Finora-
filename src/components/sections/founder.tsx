@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { site } from "@/content/site";
 import Image from "next/image";
+import { visuels } from "@/assets/visuels";
 
 export function Founder({ withCta = true }: { withCta?: boolean }) {
   const f = site.founder;
@@ -16,9 +17,13 @@ export function Founder({ withCta = true }: { withCta?: boolean }) {
             {f.photo ? (
               <Image src={f.photo} alt={`${f.firstName}, fondateur de FINORA Academy`} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
             ) : (
-              <div className="bg-navy-grain flex h-full items-center justify-center p-8">
-                <Monogram className="size-24 opacity-90" />
-              </div>
+              <>
+                {/* Nature morte d'ambiance : ne représente pas le fondateur */}
+                <Image src={visuels.croissance.src} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover object-[60%_center]" />
+                <div className="absolute inset-0 flex items-start justify-center bg-gradient-to-b from-navy/70 via-navy/30 to-navy/70 pt-14">
+                  <Monogram className="size-16 opacity-90" />
+                </div>
+              </>
             )}
             <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-4 backdrop-blur">
               <p className="font-display text-base font-bold text-navy">{f.firstName}</p>

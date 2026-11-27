@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { visuels } from "@/assets/visuels";
 import { CalendarCheck, MailCheck, PlaySquare } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/sections/page-hero";
@@ -19,7 +20,7 @@ const steps = [
 export default function WorkshopsPage() {
   return (
     <>
-      <PageHero eyebrow="Ateliers et cours" title="Apprendre en direct, poser ses questions" description="Des sessions collectives, en petit groupe, pour mettre en pratique les notions de la formation." />
+      <PageHero visual={visuels.croissance} eyebrow="Ateliers et cours" title="Apprendre en direct, poser ses questions" description="Des sessions collectives, en petit groupe, pour mettre en pratique les notions de la formation." />
       <section className="pt-16">
         <Container className="grid gap-4 md:grid-cols-3">
           {steps.map(({ icon: Icon, title, text }, i) => (
