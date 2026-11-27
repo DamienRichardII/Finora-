@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { visuels } from "@/assets/visuels";
+import { photosFondateur } from "@/assets/fondateur";
 import { HeartHandshake, Scale, Sparkles, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -43,7 +44,7 @@ export default function AboutPage() {
         </Container>
       </section>
       <div className="bg-white">
-        <Founder withCta={false} />
+        <Founder withCta={false} photo={photosFondateur.portrait} />
       </div>
       <section className="py-16">
         <Container className="max-w-3xl">

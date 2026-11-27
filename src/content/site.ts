@@ -24,7 +24,6 @@ export const site = {
     "Les contenus proposés par FINORA Academy ont une vocation éducative et informative. Ils ne constituent pas, par eux-mêmes, une recommandation d'investissement personnalisée. Tout investissement comporte des risques, notamment un risque de perte en capital.",
   founder: {
     firstName: "Chris",
-    photo: null as string | null,
     experience: "Trois ans et demi d'expérience dans le domaine financier.",
     bio: null as string | null,
     diplomas: [] as string[], // uniquement des diplômes vérifiés

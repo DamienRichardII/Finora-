@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0] — 2026-11-28 — Photos du fondateur
+
+### Ajouté
+- Deux photos du fondateur en WebP (`src/assets/fondateur`, 105 et 147 Ko), servies en tailles responsives par `next/image`.
+- Accueil : portrait au bureau dans la section fondateur, à la place du visuel d'ambiance et du monogramme.
+- À propos : portrait détouré posé sur une carte ivoire dégradée.
+
 ## [0.5.0] — 2026-11-27 — Visuels
 
 ### Ajouté

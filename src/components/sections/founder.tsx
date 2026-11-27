@@ -1,30 +1,34 @@
 import { ArrowRight, Briefcase, GraduationCap, Eye } from "lucide-react";
-import { Monogram } from "@/components/brand/logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { site } from "@/content/site";
 import Image from "next/image";
-import { visuels } from "@/assets/visuels";
+import { photosFondateur, type FounderPhoto } from "@/assets/fondateur";
 
-export function Founder({ withCta = true }: { withCta?: boolean }) {
+export function Founder({ withCta = true, photo = photosFondateur.bureau }: { withCta?: boolean; photo?: FounderPhoto }) {
   const f = site.founder;
+  const cutout = photo.variant === "cutout";
   return (
     <section className="py-20 sm:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] bg-navy">
-            {f.photo ? (
-              <Image src={f.photo} alt={`${f.firstName}, fondateur de FINORA Academy`} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
-            ) : (
-              <>
-                {/* Nature morte d'ambiance : ne représente pas le fondateur */}
-                <Image src={visuels.croissance.src} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover object-[60%_center]" />
-                <div className="absolute inset-0 flex items-start justify-center bg-gradient-to-b from-navy/70 via-navy/30 to-navy/70 pt-14">
-                  <Monogram className="size-16 opacity-90" />
-                </div>
-              </>
-            )}
+          <div
+            className={
+              cutout
+                ? "relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-gold/25 bg-gradient-to-b from-ivory via-[#efe8da] to-[#e4d7bd] shadow-card"
+                : "relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] bg-navy shadow-card"
+            }
+          >
+            {cutout && <div aria-hidden className="absolute left-1/2 top-[18%] size-72 -translate-x-1/2 rounded-full bg-white/60 blur-3xl" />}
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              placeholder={cutout ? "empty" : "blur"}
+              sizes="(min-width: 1024px) 448px, 90vw"
+              className={cutout ? "object-contain object-bottom pt-8" : "object-cover object-[42%_center]"}
+            />
             <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-4 backdrop-blur">
               <p className="font-display text-base font-bold text-navy">{f.firstName}</p>
               <p className="text-sm text-slate">Fondateur de FINORA Academy</p>
