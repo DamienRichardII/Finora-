@@ -1,61 +1,61 @@
-import Image from "next/image";
-import { ArrowRight, GraduationCap, MonitorSmartphone, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Monogram } from "@/components/brand/logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { site } from "@/content/site";
-import { HeroVisual } from "./hero-visual";
+import { CountUp } from "@/components/ui/count-up";
+import { Reveal } from "@/components/ui/reveal";
 
-const reassurance = [
-  { icon: GraduationCap, label: "8 modules", sub: "de formation" },
-  { icon: MonitorSmartphone, label: "100 % en ligne", sub: "sur tous vos écrans" },
-  { icon: Clock, label: "À votre rythme", sub: "sans contrainte d'horaire" },
+/** KPI : uniquement des faits vrais de l'offre, aucune statistique inventée. */
+const kpis = [
+  { value: 8, suffix: "", label: "modules de formation" },
+  { value: 100, suffix: " %", label: "en ligne" },
+  { value: 24, suffix: "/7", label: "à votre rythme" },
 ];
 
 export function Hero() {
   return (
     <section className="bg-navy-grain relative overflow-hidden text-white">
-      <Container className="grid items-center gap-14 pb-20 pt-12 sm:pt-16 lg:grid-cols-[1.1fr_1fr] lg:gap-10 lg:pb-28 lg:pt-20 [&>*]:min-w-0">
-        <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80">
-            <span className="size-1.5 rounded-full bg-gold" /> Académie d&apos;éducation financière
-          </p>
-          <h1 className="mt-6 text-[2.5rem] font-extrabold leading-[1.05] sm:text-6xl lg:text-[4.1rem]">
-            Maîtrisez votre argent, <span className="text-gold-gradient">construisez votre avenir.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-            Développez votre culture financière, apprenez à mieux gérer votre argent et construisez votre avenir grâce à des formations accessibles, concrètes et structurées.
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/formations" size="lg">
-              Découvrir les formations <ArrowRight />
-            </ButtonLink>
-            <ButtonLink href="/packs" variant="outline-light" size="lg">
-              Voir les offres
-            </ButtonLink>
-          </div>
-          <ul className="mt-12 grid grid-cols-1 gap-5 border-t border-white/10 pt-8 sm:grid-cols-3">
-            {reassurance.map(({ icon: Icon, label, sub }) => (
-              <li key={label} className="flex items-center gap-3">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-gold/25 bg-gold/10 text-gold">
-                  <Icon className="size-5" />
-                </span>
-                <span className="leading-tight">
-                  <span className="block font-display text-sm font-semibold">{label}</span>
-                  <span className="text-xs text-white/55">{sub}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
+      {/* Filigrane : monogramme géant, très discret */}
+      <Monogram className="pointer-events-none absolute -right-24 top-1/2 size-[34rem] -translate-y-1/2 opacity-[0.035] max-lg:hidden" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px max-w-3xl bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+
+      <Container className="relative flex flex-col items-center pb-16 pt-16 text-center sm:pb-20 sm:pt-24 lg:pt-28">
+        {/* Logo dominant */}
+        <div className="flex flex-col items-center">
+          <Monogram className="size-20 sm:size-24 lg:size-28" />
+          <p className="mt-6 font-display text-5xl font-extrabold leading-none tracking-[0.06em] sm:text-7xl lg:text-8xl">FINORA</p>
+          <p className="mt-3 font-display text-sm font-bold tracking-[0.55em] text-gold sm:text-base">ACADEMY</p>
         </div>
 
-        {site.heroImage ? (
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
-            {/* Visuel illustratif : ne représente pas le fondateur. */}
-            <Image src={site.heroImage} alt="Personne apprenant à gérer ses finances" fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
-          </div>
-        ) : (
-          <HeroVisual />
-        )}
+        <h1 className="mt-10 text-[clamp(1.25rem,3.1vw,2.5rem)] font-bold leading-snug sm:whitespace-nowrap">
+          Maîtrisez votre argent, <span className="text-gold-gradient">construisez votre avenir.</span>
+        </h1>
+
+        <div className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+          <ButtonLink href="/formations" size="lg">
+            Découvrir les formations <ArrowRight />
+          </ButtonLink>
+          <ButtonLink href="/packs" variant="outline-light" size="lg">
+            Voir les offres
+          </ButtonLink>
+        </div>
+      </Container>
+
+      {/* KPI qui apparaissent au scroll */}
+      <Container className="relative pb-16 sm:pb-20">
+        <dl className="mx-auto grid max-w-4xl grid-cols-3 divide-x divide-white/10 rounded-[1.5rem] border border-white/10 bg-white/[0.03] backdrop-blur">
+          {kpis.map((k, i) => (
+            <Reveal key={k.label} delay={i * 120} className="px-2 py-6 text-center sm:px-6 sm:py-7">
+              <dt className="sr-only">{k.label}</dt>
+              <dd>
+                <span className="block font-display text-3xl font-extrabold text-gold sm:text-5xl">
+                  <CountUp to={k.value} suffix={k.suffix} />
+                </span>
+                <span className="mt-2 block text-xs text-white/65 sm:text-sm">{k.label}</span>
+              </dd>
+            </Reveal>
+          ))}
+        </dl>
       </Container>
     </section>
   );

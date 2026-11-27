@@ -22,8 +22,6 @@ export const site = {
   socials: [] as { label: string; href: string }[],
   disclaimer:
     "Les contenus proposés par FINORA Academy ont une vocation éducative et informative. Ils ne constituent pas, par eux-mêmes, une recommandation d'investissement personnalisée. Tout investissement comporte des risques, notamment un risque de perte en capital.",
-  /** Photo du hero : chemin dans /public une fois une photographie sous licence fournie. */
-  heroImage: null as string | null,
   founder: {
     firstName: "Chris",
     photo: null as string | null,
