@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Ban, BadgeCheck, Clock, Settings2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { PlaceholderBadge } from "@/components/ui/badge";
 import { PageHero } from "@/components/sections/page-hero";
 import { Referral } from "@/components/sections/referral";
 import { FinalCta } from "@/components/sections/final-cta";
@@ -26,10 +25,7 @@ export default function ReferralPage() {
       <Referral withCta={false} />
       <section className="pb-20">
         <Container>
-          <div className="flex flex-wrap items-center gap-3">
-            <h2 className="text-2xl font-bold text-navy sm:text-3xl">Les règles du programme</h2>
-            <PlaceholderBadge>Récompenses à définir</PlaceholderBadge>
-          </div>
+          <h2 className="text-2xl font-bold text-navy sm:text-3xl">Les règles du programme</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {rules.map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex gap-4 rounded-card border border-navy/[0.06] bg-white p-6">

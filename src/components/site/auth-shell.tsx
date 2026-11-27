@@ -25,7 +25,7 @@ export function AuthShell({ title, description, children, footer }: { title: str
           <p role="note" className="mt-6 flex gap-3 rounded-xl border border-gold/40 bg-gold/10 p-4 text-sm text-navy">
             <Info className="mt-0.5 size-4 shrink-0 text-gold-ink" />
             <span>
-              L&apos;espace adhérent est en cours de mise en service. Les comptes pourront être créés à l&apos;ouverture de la plateforme. Une question ?{" "}
+              L&apos;espace adhérent ouvre très prochainement. Une question ?{" "}
               <Link href="/contact" className="font-semibold underline underline-offset-2">
                 Contactez-nous
               </Link>

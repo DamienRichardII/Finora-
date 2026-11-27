@@ -1,6 +1,5 @@
 import { ArrowRight, Briefcase, GraduationCap, Eye } from "lucide-react";
 import { Monogram } from "@/components/brand/logo";
-import { PlaceholderBadge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -17,9 +16,8 @@ export function Founder({ withCta = true }: { withCta?: boolean }) {
             {f.photo ? (
               <Image src={f.photo} alt={`${f.firstName}, fondateur de FINORA Academy`} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
             ) : (
-              <div className="bg-navy-grain flex h-full flex-col items-center justify-center gap-4 p-8 text-center">
-                <Monogram className="size-20 opacity-90" />
-                <PlaceholderBadge className="border-gold/40 text-gold">Photographie officielle à intégrer</PlaceholderBadge>
+              <div className="bg-navy-grain flex h-full items-center justify-center p-8">
+                <Monogram className="size-24 opacity-90" />
               </div>
             )}
             <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-4 backdrop-blur">
@@ -35,7 +33,6 @@ export function Founder({ withCta = true }: { withCta?: boolean }) {
           <p className="mt-5 text-lg leading-relaxed text-slate">
             {f.bio ?? "Après plusieurs années dans le secteur financier, Chris a fondé FINORA Academy avec une conviction : comprendre l'argent ne devrait pas être réservé à quelques-uns."}
           </p>
-          {!f.bio && <PlaceholderBadge className="mt-3">Biographie complète à fournir</PlaceholderBadge>}
 
           <dl className="mt-8 space-y-4">
             <div className="flex gap-4 rounded-2xl border border-navy/[0.06] bg-white p-4">
@@ -45,13 +42,15 @@ export function Founder({ withCta = true }: { withCta?: boolean }) {
                 <dd className="text-sm text-slate">{f.experience}</dd>
               </div>
             </div>
-            <div className="flex gap-4 rounded-2xl border border-navy/[0.06] bg-white p-4">
-              <GraduationCap className="mt-0.5 size-5 shrink-0 text-gold-ink" />
-              <div>
-                <dt className="font-semibold text-navy">Diplômes</dt>
-                <dd className="text-sm text-slate">{f.diplomas.length ? f.diplomas.join(" · ") : <PlaceholderBadge>Diplômes vérifiés à compléter</PlaceholderBadge>}</dd>
+            {f.diplomas.length > 0 && (
+              <div className="flex gap-4 rounded-2xl border border-navy/[0.06] bg-white p-4">
+                <GraduationCap className="mt-0.5 size-5 shrink-0 text-gold-ink" />
+                <div>
+                  <dt className="font-semibold text-navy">Diplômes</dt>
+                  <dd className="text-sm text-slate">{f.diplomas.join(" · ")}</dd>
+                </div>
               </div>
-            </div>
+            )}
             <div className="flex gap-4 rounded-2xl border border-navy/[0.06] bg-white p-4">
               <Eye className="mt-0.5 size-5 shrink-0 text-gold-ink" />
               <div>

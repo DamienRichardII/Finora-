@@ -35,7 +35,7 @@ export default function FormationsPage() {
           })),
         }}
       />
-      <PageHero eyebrow="Formations" title="Le programme FINORA Academy" description="Un parcours en huit modules vidéo, des fondamentaux jusqu'à votre stratégie financière à long terme. Programme provisoire, en cours de finalisation.">
+      <PageHero eyebrow="Formations" title="Le programme FINORA Academy" description="Un parcours en huit modules vidéo, des fondamentaux jusqu'à votre stratégie financière à long terme.">
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
           {features.map(({ icon: Icon, label }) => (
             <li key={label} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80">

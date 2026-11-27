@@ -1,10 +1,9 @@
-import { Check, Info } from "lucide-react";
+import { Check } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { intervalLabel, plans } from "@/content/plans";
-import { site } from "@/content/site";
 import { cn, formatPrice } from "@/lib/utils";
 
 export function Pricing({ withHeading = true, headingAs = "h2" }: { withHeading?: boolean; headingAs?: "h1" | "h2" }) {
@@ -47,11 +46,6 @@ export function Pricing({ withHeading = true, headingAs = "h2" }: { withHeading?
             </Reveal>
           ))}
         </div>
-        {site.demoMode && (
-          <p className="mx-auto mt-12 flex max-w-2xl items-start justify-center gap-2 text-center text-xs text-white/50">
-            <Info className="mt-0.5 size-3.5 shrink-0" /> Tarifs et contenus de démonstration, en attente de validation. Ils seront modifiables depuis l&apos;espace administrateur.
-          </p>
-        )}
       </Container>
     </section>
   );

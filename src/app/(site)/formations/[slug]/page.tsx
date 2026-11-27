@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CheckCircle2, Lock } from "lucide-react";
-import { PlaceholderBadge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { ModuleCard } from "@/components/sections/module-card";
@@ -66,10 +65,7 @@ export default async function ModulePage({ params }: PageProps<"/formations/[slu
       <section className="py-16 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <h2 className="text-2xl font-bold text-navy">Ce que vous allez apprendre</h2>
-              <PlaceholderBadge>Programme provisoire</PlaceholderBadge>
-            </div>
+            <h2 className="text-2xl font-bold text-navy">Ce que vous allez apprendre</h2>
             <ul className="mt-6 space-y-3">
               {m.objectives.map((o) => (
                 <li key={o} className="flex gap-3 rounded-2xl border border-navy/[0.06] bg-white p-4">
@@ -78,7 +74,7 @@ export default async function ModulePage({ params }: PageProps<"/formations/[slu
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-slate">Le détail des chapitres, la durée des vidéos et les ressources PDF seront publiés avec les contenus définitifs.</p>
+            <p className="mt-6 text-sm text-slate">Chaque module est organisé en chapitres vidéo, accompagnés de ressources PDF à télécharger depuis votre espace adhérent.</p>
           </div>
           <aside className="h-fit rounded-card bg-white p-6 shadow-card">
             <p className="font-display font-bold text-navy">Inclus dans tous les packs</p>

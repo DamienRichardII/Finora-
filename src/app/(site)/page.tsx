@@ -32,7 +32,7 @@ export default function HomePage() {
       <Pricing />
       <WorkshopsList />
       <Referral />
-      <Testimonials demo={site.demoMode} />
+      <Testimonials />
       <FaqList />
       <FinalCta />
     </>

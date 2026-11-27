@@ -15,7 +15,7 @@
 src/
   app/
     layout.tsx               racine (polices, métadonnées, lang="fr")
-    (site)/                  site public : header, footer, bandeau démo, cookies
+    (site)/                  site public : header, footer, bandeau cookies
       page.tsx               landing (12 sections)
       a-propos, formations, formations/[slug], packs, ateliers, parrainage,
       faq, contact, connexion, inscription,

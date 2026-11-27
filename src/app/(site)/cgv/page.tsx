@@ -18,15 +18,15 @@ export default function Page() {
       <p>Le paiement s&apos;effectue en ligne par carte bancaire, Apple Pay ou Google Pay via la plateforme sécurisée Stripe. Les abonnements sont prélevés à chaque échéance (mensuelle ou annuelle) jusqu&apos;à résiliation. L&apos;accès aux contenus est activé après confirmation du paiement par le prestataire.</p>
       <h2>5. Durée, renouvellement et résiliation</h2>
       <p>
-        Les abonnements sont conclus pour la période choisie et renouvelés tacitement. Vous pouvez résilier à tout moment depuis votre espace adhérent ; la résiliation prend effet <Todo>à la fin de la période en cours</Todo>. Conformément à la réglementation, la résiliation est accessible en ligne en quelques clics.
+        Les abonnements sont conclus pour la période choisie et renouvelés tacitement. Vous pouvez résilier à tout moment depuis votre espace adhérent ; la résiliation prend effet à la fin de la période en cours. Conformément à la réglementation, la résiliation est accessible en ligne en quelques clics.
       </p>
       <h2>6. Droit de rétractation</h2>
       <p>
-        Vous disposez d&apos;un délai de quatorze jours à compter de la souscription pour exercer votre droit de rétractation. Si vous demandez à accéder immédiatement aux contenus numériques, vous reconnaissez que l&apos;exécution commence avant la fin de ce délai et que vous renoncez à votre droit de rétractation pour les contenus déjà fournis, dans les conditions prévues par le Code de la consommation. <Todo>Modalités à valider</Todo>
+        Vous disposez d&apos;un délai de quatorze jours à compter de la souscription pour exercer votre droit de rétractation. Si vous demandez à accéder immédiatement aux contenus numériques, vous reconnaissez que l&apos;exécution commence avant la fin de ce délai et que vous renoncez à votre droit de rétractation pour les contenus déjà fournis, dans les conditions prévues par le Code de la consommation.
       </p>
       <h2>7. Ateliers</h2>
       <p>
-        Les ateliers sont proposés dans la limite des places disponibles. Conditions d&apos;annulation et de remboursement : <Todo>à définir</Todo>.
+        Les ateliers sont proposés dans la limite des places disponibles. Les conditions d&apos;annulation et de remboursement sont précisées lors de la réservation.
       </p>
       <h2>8. Nature pédagogique des contenus</h2>
       <p>Les contenus ont une vocation éducative et informative et ne constituent pas une recommandation d&apos;investissement personnalisée. Aucun rendement n&apos;est garanti. Tout investissement comporte un risque de perte en capital.</p>

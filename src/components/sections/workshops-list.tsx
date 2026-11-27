@@ -1,10 +1,9 @@
-import { CalendarDays, Clock, MapPin, Users, Video } from "lucide-react";
-import { PlaceholderBadge } from "@/components/ui/badge";
+import { ArrowRight, CalendarDays, Clock, MapPin, Users, Video } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { formatDuration, formatWorkshopDate, formatWorkshopTime, workshops } from "@/content/workshops";
+import { formatDuration, formatWorkshopDate, formatWorkshopTime, workshopThemes, workshops } from "@/content/workshops";
 import { formatPrice } from "@/lib/utils";
 
 export function WorkshopsList({ withHeading = true }: { withHeading?: boolean }) {
@@ -14,7 +13,30 @@ export function WorkshopsList({ withHeading = true }: { withHeading?: boolean })
         {withHeading && (
           <SectionHeading eyebrow="Ateliers et cours" title="Apprendre ensemble, en direct" description="Des sessions collectives sur une thématique précise, pour poser vos questions et passer à la pratique." />
         )}
-        <div className="mx-auto mt-14 grid max-w-5xl gap-4">
+        {workshops.length === 0 && (
+          <>
+            <div className="mx-auto mt-14 grid max-w-5xl gap-5 md:grid-cols-3">
+              {workshopThemes.map((t, i) => (
+                <Reveal key={t.title} delay={i * 80}>
+                  <article className="flex h-full flex-col rounded-card border border-navy/[0.06] bg-white p-6 shadow-card">
+                    <span className="self-start rounded-full bg-ivory px-2.5 py-0.5 text-xs font-semibold text-navy">{t.theme}</span>
+                    <h3 className="mt-4 text-lg font-bold text-navy">{t.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate">{t.text}</p>
+                    <p className="mt-auto flex items-center gap-1.5 pt-5 text-sm text-slate">
+                      <Video className="size-4 text-gold-ink" /> En ligne ou en présentiel
+                    </p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <ButtonLink href={`/contact?sujet=${encodeURIComponent("Ateliers : prochaines dates")}`} variant="navy">
+                Connaître les prochaines dates <ArrowRight />
+              </ButtonLink>
+            </div>
+          </>
+        )}
+        <div className="mx-auto mt-14 grid max-w-5xl gap-4 empty:hidden">
           {workshops.map((w, i) => (
             <Reveal key={w.slug} delay={i * 80}>
               <article className="grid gap-5 rounded-card border border-navy/[0.06] bg-white p-5 shadow-card sm:p-6 md:grid-cols-[auto_1fr_auto] md:items-center md:gap-8">
@@ -25,7 +47,6 @@ export function WorkshopsList({ withHeading = true }: { withHeading?: boolean })
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="rounded-full bg-ivory px-2.5 py-0.5 text-xs font-semibold text-navy">{w.theme}</span>
-                    {w.demo && <PlaceholderBadge>Exemple</PlaceholderBadge>}
                   </div>
                   <h3 className="mt-2 text-lg font-bold text-navy">{w.title}</h3>
                   <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-slate">

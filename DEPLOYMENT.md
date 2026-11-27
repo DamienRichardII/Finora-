@@ -11,7 +11,7 @@
 
 ## Variables d'environnement
 Voir `.env.example`. À saisir dans Vercel → Settings → Environment Variables (Production et Preview séparés ; clés Stripe **test** en Preview).
-En production : `NEXT_PUBLIC_DEMO_MODE=false`, `NEXT_PUBLIC_SITE_URL=https://domaine-final`.
+En production : `NEXT_PUBLIC_SITE_URL=https://domaine-final`.
 
 ## Étapes
 ```bash
@@ -26,7 +26,7 @@ npm run lint && npm run typecheck && npm run build
 - [ ] Documents juridiques complétés et validés par un professionnel
 - [ ] Nom FINORA Academy vérifié (INPI) 
 - [ ] Tarifs et packs validés par Chris
-- [ ] Bandeau démo désactivé, aucun contenu fictif restant
+- [ ] Aucun contenu fictif restant, champs légaux entre crochets remplis
 - [ ] Paiement testé de bout en bout en mode test, puis un paiement réel de faible montant remboursé
 
 ## Transmission des accès

@@ -22,11 +22,11 @@ export default function Page() {
       </ul>
       <h2>Durées de conservation</h2>
       <p>
-        Les données du compte sont conservées pendant la durée de la relation contractuelle puis <Todo>durée</Todo> à des fins probatoires. Les pièces comptables sont conservées dix ans. Les demandes de contact sont conservées <Todo>durée</Todo>.
+        Les données du compte sont conservées pendant la durée de la relation contractuelle puis trois ans à des fins probatoires. Les pièces comptables sont conservées dix ans. Les demandes de contact sont conservées trois ans au plus.
       </p>
       <h2>Destinataires et sous-traitants</h2>
       <p>
-        Vos données sont destinées à FINORA Academy et à ses sous-traitants techniques : hébergement (<Todo>Vercel</Todo>), base de données et authentification (<Todo>Supabase</Todo>), paiement (Stripe), e-mails transactionnels (<Todo>Resend</Todo>), diffusion vidéo (<Todo>prestataire retenu</Todo>). Certains peuvent être situés hors de l&apos;Union européenne ; les transferts sont alors encadrés par des garanties appropriées.
+        Vos données sont destinées à FINORA Academy et à ses sous-traitants techniques : hébergement (Vercel), paiement (Stripe), base de données, envoi d&apos;e-mails et diffusion vidéo. Certains peuvent être situés hors de l&apos;Union européenne ; les transferts sont alors encadrés par des garanties appropriées.
       </p>
       <h2>Vos droits</h2>
       <p>
