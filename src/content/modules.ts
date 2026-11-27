@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { visuels, type Visual } from "@/assets/visuels";
 import { BookOpen, Wallet, PiggyBank, Landmark, LineChart, FileText, Building2, Compass } from "lucide-react";
 
 /** Programme provisoire des huit modules. Titres définitifs à fournir par Chris. */
@@ -9,11 +10,13 @@ export type Module = {
   summary: string;
   objectives: string[];
   icon: LucideIcon;
+  visual: Visual;
 };
 
 export const modules: Module[] = [
   {
     number: 1,
+    visual: visuels.graphiques,
     slug: "fondamentaux-education-financiere",
     title: "Les fondamentaux de l'éducation financière",
     summary: "Comprendre les mécanismes de l'argent et les notions financières essentielles.",
@@ -22,6 +25,7 @@ export const modules: Module[] = [
   },
   {
     number: 2,
+    visual: visuels.tirelire,
     slug: "gerer-son-budget",
     title: "Apprendre à gérer son budget",
     summary: "Identifier ses dépenses, organiser ses revenus et construire un budget.",
@@ -30,6 +34,7 @@ export const modules: Module[] = [
   },
   {
     number: 3,
+    visual: visuels.tirelire,
     slug: "epargne-securite-financiere",
     title: "Épargne et sécurité financière",
     summary: "Comprendre les différents mécanismes d'épargne et la constitution d'une réserve financière.",
@@ -38,6 +43,7 @@ export const modules: Module[] = [
   },
   {
     number: 4,
+    visual: visuels.maison,
     slug: "credits-et-dettes",
     title: "Comprendre les crédits et les dettes",
     summary: "Comprendre les taux, les intérêts, les emprunts et les risques liés à l'endettement.",
@@ -46,6 +52,7 @@ export const modules: Module[] = [
   },
   {
     number: 5,
+    visual: visuels.croissance,
     slug: "fondamentaux-investissement",
     title: "Les fondamentaux de l'investissement",
     summary: "Découvrir les grandes catégories d'investissement, leur fonctionnement et leurs risques.",
@@ -54,6 +61,7 @@ export const modules: Module[] = [
   },
   {
     number: 6,
+    visual: visuels.graphiques,
     slug: "comprendre-la-fiscalite",
     title: "Comprendre la fiscalité",
     summary: "Introduire les principales notions fiscales applicables aux finances personnelles.",
@@ -62,6 +70,7 @@ export const modules: Module[] = [
   },
   {
     number: 7,
+    visual: visuels.maison,
     slug: "construire-son-patrimoine",
     title: "Construire son patrimoine",
     summary: "Comprendre la diversification, la protection et la gestion patrimoniale.",
@@ -70,6 +79,7 @@ export const modules: Module[] = [
   },
   {
     number: 8,
+    visual: visuels.croissance,
     slug: "strategie-financiere-long-terme",
     title: "Élaborer sa stratégie financière à long terme",
     summary: "Structurer ses objectifs et construire une feuille de route financière personnelle.",

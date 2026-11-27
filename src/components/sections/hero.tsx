@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { visuels } from "@/assets/visuels";
 import { Monogram } from "@/components/brand/logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -15,8 +17,9 @@ const kpis = [
 export function Hero() {
   return (
     <section className="bg-navy-grain relative overflow-hidden text-white">
-      {/* Filigrane : monogramme géant, très discret */}
-      <Monogram className="pointer-events-none absolute -right-24 top-1/2 size-[34rem] -translate-y-1/2 opacity-[0.035] max-lg:hidden" />
+      {/* Visuel d'ambiance assombri pour garder le logo dominant et le texte lisible */}
+      <Image src={visuels.globe.src} alt="" fill priority placeholder="blur" sizes="100vw" className="object-cover object-[70%_center]" />
+      <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(16_31_44/0.78)_0%,rgb(16_31_44/0.9)_55%,rgb(8_19_31/0.96)_100%)]" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px max-w-3xl bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
       <Container className="relative flex flex-col items-center pb-16 pt-16 text-center sm:pb-20 sm:pt-24 lg:pt-28">

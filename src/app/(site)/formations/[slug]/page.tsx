@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CheckCircle2, Lock } from "lucide-react";
@@ -48,13 +49,15 @@ export default async function ModulePage({ params }: PageProps<"/formations/[slu
               </ButtonLink>
             </div>
           </div>
-          <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04]">
-            <span className="absolute -bottom-8 right-4 font-display text-[10rem] font-extrabold leading-none text-white/[0.05]">{n}</span>
-            <div className="flex flex-col items-center gap-4 text-center">
+          <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-[1.75rem] border border-white/10 bg-navy">
+            <Image src={m.visual.src} alt={m.visual.alt} fill priority placeholder="blur" sizes="(min-width: 1024px) 40vw, 92vw" className="object-cover" />
+            <span aria-hidden="true" className="absolute inset-0 bg-navy/60" />
+            <span className="absolute -bottom-8 right-4 font-display text-[10rem] font-extrabold leading-none text-white/[0.1]">{n}</span>
+            <div className="relative flex flex-col items-center gap-4 text-center">
               <span className="flex size-16 items-center justify-center rounded-2xl border border-gold/30 bg-gold/10 text-gold">
                 <Icon className="size-8" />
               </span>
-              <span className="inline-flex items-center gap-2 text-sm text-white/60">
+              <span className="inline-flex items-center gap-2 text-sm text-white/80">
                 <Lock className="size-4" /> Vidéo réservée aux adhérents
               </span>
             </div>

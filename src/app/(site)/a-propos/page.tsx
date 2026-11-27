@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { visuels } from "@/assets/visuels";
 import { HeartHandshake, Scale, Sparkles, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -24,7 +25,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="À propos" title={<>Comprendre. Maîtriser. <span className="text-gold-gradient">Construire.</span></>} description="FINORA Academy est née d'une conviction simple : bien gérer son argent s'apprend, et cet apprentissage doit être accessible à chacun." />
+      <PageHero visual={visuels.maison} eyebrow="À propos" title={<>Comprendre. Maîtriser. <span className="text-gold-gradient">Construire.</span></>} description="FINORA Academy est née d'une conviction simple : bien gérer son argent s'apprend, et cet apprentissage doit être accessible à chacun." />
       <section className="py-20 sm:py-28">
         <Container>
           <SectionHeading eyebrow="Nos valeurs" title="Une académie exigeante et bienveillante" />
