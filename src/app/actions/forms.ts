@@ -4,7 +4,13 @@ import { headers } from "next/headers";
 import { sendEmail } from "@/lib/email";
 import { rateLimit } from "@/lib/rate-limit";
 
-export type FormState = { status: "idle" | "success" | "error"; message?: string; fieldErrors?: Record<string, string> };
+export type FormState = {
+  status: "idle" | "success" | "error";
+  message?: string;
+  fieldErrors?: Record<string, string>;
+  /** Valeurs saisies, renvoyées en cas d'erreur pour ne rien faire perdre au visiteur. */
+  values?: Record<string, string>;
+};
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const NOT_CONFIGURED =
@@ -28,21 +34,22 @@ export async function submitContact(_: FormState, fd: FormData): Promise<FormSta
   const message = field(fd, "message", 5000);
   const consent = fd.get("consent") === "on";
 
+  const values = { name, email, subject, message, consent: consent ? "on" : "" };
   const fieldErrors: Record<string, string> = {};
   if (name.length < 2) fieldErrors.name = "Indiquez votre nom.";
   if (!EMAIL_RE.test(email)) fieldErrors.email = "Adresse e-mail invalide.";
   if (message.length < 10) fieldErrors.message = "Votre message est trop court.";
   if (!consent) fieldErrors.consent = "Votre accord est nécessaire pour traiter votre demande.";
-  if (Object.keys(fieldErrors).length) return { status: "error", message: "Merci de corriger les champs indiqués.", fieldErrors };
+  if (Object.keys(fieldErrors).length) return { status: "error", message: "Merci de corriger les champs indiqués.", fieldErrors, values };
 
-  if (!rateLimit(await clientKey("contact"))) return { status: "error", message: "Trop de messages envoyés. Réessayez dans quelques minutes." };
+  if (!rateLimit(await clientKey("contact"))) return { status: "error", message: "Trop de messages envoyés. Réessayez dans quelques minutes.", values };
 
   const res = await sendEmail({
     subject: `[Contact FINORA] ${subject || "Nouveau message"}`,
     text: `Nom : ${name}\nE-mail : ${email}\nSujet : ${subject}\n\n${message}`,
     replyTo: email,
   });
-  if (!res.ok) return { status: "error", message: res.reason === "not_configured" ? NOT_CONFIGURED : "L'envoi a échoué. Merci de réessayer plus tard." };
+  if (!res.ok) return { status: "error", message: res.reason === "not_configured" ? NOT_CONFIGURED : "L'envoi a échoué. Merci de réessayer plus tard.", values };
   return { status: "success", message: "Merci, votre message a bien été envoyé. Nous vous répondrons rapidement." };
 }
 

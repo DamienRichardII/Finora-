@@ -40,7 +40,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className="h-full">
+    <html lang="fr" className="h-full" suppressHydrationWarning>
+      <head>
+        {/* Active les animations d'apparition seulement si JavaScript s'exécute */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
