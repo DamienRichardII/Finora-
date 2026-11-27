@@ -5,7 +5,8 @@ Bonjour Chris, ce guide explique ce qui est prêt, comment modifier vos contenus
 ## Ce qui est prêt
 - Votre identité visuelle (logo et charte : `public/brand/FINORA-charte-graphique.pdf`).
 - Le site public complet, consultable sur ordinateur, tablette et smartphone.
-- Un bandeau « Version de démonstration » rappelle que les tarifs, ateliers et avis sont des exemples.
+- Le site n'affiche aucune mention de démonstration. Les informations manquantes listées ci-dessous restent à fournir : tant qu'elles manquent, les sections concernées sont masquées (avis, diplômes, réseaux sociaux) ou présentées sans date (ateliers). Les pages légales contiennent encore des champs entre crochets (raison sociale, SIREN, adresse, médiateur…) à remplir avant l'ouverture commerciale.
+- Les tarifs affichés restent des hypothèses à valider avant toute vente.
 
 ## Modifier les contenus (en attendant l'espace administrateur)
 Jusqu'à la phase 7, les textes sont regroupés dans quelques fichiers que DamCompany met à jour pour vous :

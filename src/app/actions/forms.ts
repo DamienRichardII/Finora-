@@ -14,7 +14,7 @@ export type FormState = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const NOT_CONFIGURED =
-  "L'envoi de messages n'est pas encore activé sur cette version de démonstration. Il le sera dès que l'adresse e-mail professionnelle de FINORA Academy sera configurée.";
+  "L'envoi de messages est momentanément indisponible. Merci de réessayer un peu plus tard.";
 
 async function clientKey(scope: string) {
   const h = await headers();
@@ -64,7 +64,7 @@ export async function subscribeNewsletter(_: FormState, fd: FormData): Promise<F
   if (!res.ok)
     return {
       status: "error",
-      message: res.reason === "not_configured" ? "La newsletter sera ouverte au lancement de FINORA Academy." : "L'inscription a échoué. Réessayez plus tard.",
+      message: res.reason === "not_configured" ? "L'inscription à la newsletter est momentanément indisponible." : "L'inscription a échoué. Réessayez plus tard.",
     };
   return { status: "success", message: "Merci, votre inscription est enregistrée." };
 }

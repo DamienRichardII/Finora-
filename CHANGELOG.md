@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.0] — 2026-11-27 — Mise en production du site vitrine
+
+### Modifié
+- Hero allégé : logo dominant, slogan sur une ligne, deux CTA centrés, KPI animés au scroll (8 modules, 100 % en ligne, 24/7).
+- Suppression de toutes les mentions de démonstration à l'écran : bandeau, badges « Exemple », « À compléter », note sur les tarifs.
+- Avis clients masqués tant qu'aucun avis réel n'est publié ; diplômes masqués tant qu'ils ne sont pas fournis.
+- Ateliers présentés par thématique, sans date ni tarif inventés, avec un lien « Connaître les prochaines dates ».
+- Pages légales : hébergeur (Vercel) renseigné ; seuls les champs d'identité de l'entreprise restent entre crochets.
+- Mode démo désactivé par défaut (`NEXT_PUBLIC_DEMO_MODE=true` pour le réactiver).
+
 ## [0.3.0] — 2026-11-27 — Branding et site public
 
 ### Ajouté

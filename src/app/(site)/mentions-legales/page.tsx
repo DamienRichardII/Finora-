@@ -15,7 +15,7 @@ export default function Page() {
       </p>
       <h2>Hébergement</h2>
       <p>
-        Le site est hébergé par <Todo>hébergeur, par exemple Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</Todo>.
+        Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.
       </p>
       <h2>Conception et développement</h2>
       <p>Site conçu et développé par DamCompany.</p>

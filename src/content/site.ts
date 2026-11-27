@@ -12,7 +12,7 @@ export const site = {
     "FINORA Academy, académie en ligne d'éducation financière : des formations vidéo, des ateliers et des cours pour apprendre à gérer son budget, comprendre l'épargne et découvrir l'investissement.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   /** Version de démonstration : affiche un bandeau et identifie les contenus fictifs. */
-  demoMode: process.env.NEXT_PUBLIC_DEMO_MODE !== "false",
+  demoMode: process.env.NEXT_PUBLIC_DEMO_MODE === "true",
   contact: {
     email: null as string | null, // à fournir par Chris
     phone: null as string | null,
