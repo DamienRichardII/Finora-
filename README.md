@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FINORA Academy
 
-## Getting Started
+Plateforme d'éducation financière de Chris, conçue et développée par **DamCompany** (devis n°107 du 16/11/2026).
 
-First, run the development server:
+> **Comprendre. Maîtriser. Construire.** — Maîtrisez votre argent, construisez votre avenir.
+
+## État actuel
+
+| Phase | Statut |
+|---|---|
+| 1. Analyse et plan | ✅ Terminée — voir `ROADMAP.md` |
+| 2. Branding (logo, déclinaisons, charte, design system) | ✅ Terminée — proposition à valider par Chris |
+| 3. Site public multipage | ✅ Terminée — 17 pages, contenus provisoires identifiés |
+| 4. Infrastructure (Supabase, auth, rôles, RLS) | ⏳ Nécessite la création des comptes Supabase |
+| 5 à 8 | ⏳ Voir `ROADMAP.md` |
+
+Ce qui fonctionne réellement aujourd'hui et ce qui reste simulé ou à brancher est détaillé dans `CHANGELOG.md`.
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # compléter si besoin, le site fonctionne sans
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Commande | Rôle |
+|---|---|
+| `npm run dev` | Serveur de développement |
+| `npm run build` / `npm start` | Build et serveur de production |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | Vérification TypeScript |
+| `npm run brand` | Régénère logos SVG/PNG, favicons et image Open Graph |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js 16 (App Router, Cache Components) · React 19 · TypeScript · Tailwind CSS 4 · Lucide · polices auto-hébergées (Manrope, Inter).
+Prévu : Supabase (PostgreSQL, Auth, Storage, RLS) · Stripe (Checkout, Billing, webhooks) · Resend · Recharts · Vercel.
 
-## Learn More
+## Documentation
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `PROJECT_BRIEF.md` : besoin client et périmètre contractuel
+- `BRAND_GUIDELINES.md` : charte graphique (PDF : `public/brand/FINORA-charte-graphique.pdf`)
+- `ARCHITECTURE.md` : organisation du code et choix techniques
+- `DATABASE_SCHEMA.md` : modèle de données cible
+- `SECURITY.md` : mesures de sécurité
+- `DEPLOYMENT.md` : mise en ligne et transmission des accès
+- `CLIENT_GUIDE.md` : guide pour Chris et checklist des informations à fournir
+- `ROADMAP.md` / `CHANGELOG.md`
+- `Damcompany-code-guardrails.md` + `CLAUDE.md` : règles pour les agents IA
