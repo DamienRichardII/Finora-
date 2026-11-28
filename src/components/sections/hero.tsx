@@ -32,7 +32,7 @@ export function Hero() {
           <p className="mt-4 -mr-[0.42em] font-display text-xs font-bold uppercase tracking-[0.42em] text-gold sm:text-sm">{BRAND.descriptor}</p>
         </div>
 
-        <h1 className="mt-10 text-[clamp(1.25rem,3.1vw,2.5rem)] font-bold leading-snug sm:whitespace-nowrap">
+        <h1 className="mt-10 whitespace-nowrap text-[4vw] font-bold leading-snug sm:text-[clamp(1.25rem,3.1vw,2.5rem)]">
           Maîtrisez votre argent, <span className="text-gold-gradient">construisez votre avenir.</span>
         </h1>
 
