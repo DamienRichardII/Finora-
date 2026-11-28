@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.6.1] — 2026-11-28 — KPI mobile
+
+### Modifié
+- Mobile : le premier écran du hero occupe toute la hauteur visible (logo, slogan, CTA) ; les KPI n'apparaissent qu'au scroll.
+
 ## [0.6.0] — 2026-11-28 — Photos du fondateur
 
 ### Ajouté
