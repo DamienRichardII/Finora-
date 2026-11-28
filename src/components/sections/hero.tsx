@@ -22,7 +22,8 @@ export function Hero() {
       <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(16_31_44/0.78)_0%,rgb(16_31_44/0.9)_55%,rgb(8_19_31/0.96)_100%)]" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 mx-auto h-px max-w-3xl bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
-      <Container className="relative flex flex-col items-center pb-16 pt-16 text-center sm:pb-20 sm:pt-24 lg:pt-28">
+      {/* Mobile : le premier écran (hauteur visible moins l'en-tête de 4rem) ne montre que logo, slogan et CTA ; les KPI arrivent au scroll. */}
+      <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-12 text-center sm:min-h-0 sm:justify-start sm:pb-20 sm:pt-24 lg:pt-28">
         {/* Logo dominant */}
         <div className="flex flex-col items-center">
           <Monogram className="size-20 sm:size-24 lg:size-28" />
@@ -45,7 +46,7 @@ export function Hero() {
       </Container>
 
       {/* KPI qui apparaissent au scroll */}
-      <Container className="relative pb-16 sm:pb-20">
+      <Container className="relative pb-16 pt-4 sm:pb-20 sm:pt-0">
         <dl className="mx-auto grid max-w-4xl grid-cols-3 divide-x divide-white/10 rounded-[1.5rem] border border-white/10 bg-white/[0.03] backdrop-blur">
           {kpis.map((k, i) => (
             <Reveal key={k.label} delay={i * 120} className="px-2 py-6 text-center sm:px-6 sm:py-7">
