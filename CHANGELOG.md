@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.0] — 2026-11-28 — Rebranding Plenty (en attente du choix du logo)
+
+### Ajouté
+- Nouvelle identité Plenty : 3 concepts de logo inspirés des symboles Adinkra (Freedom, Wisdom, Heritage), déclinaisons SVG, PNG 4096 px, JPEG, favicons, icônes, visuels réseaux sociaux, motifs et planches (`public/branding/plenty`, `npm run brand`).
+- Configuration de marque centralisée `src/config/brand.ts`, Web App Manifest, favicon ICO, page `/branding-preview` (hors production).
+
+### Modifié
+- FINORA Academy devient Plenty sur tout le site, dans le SEO, l'Open Graph, les données structurées et les e-mails des formulaires.
+- Documentation mise à jour ; rapport et procédure de renommage externe dans `docs/REBRANDING_PLENTY.md`.
+
 ## [0.6.1] — 2026-11-28 — KPI mobile
 
 ### Modifié

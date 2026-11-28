@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { visuels } from "@/assets/visuels";
 import { Ban, BadgeCheck, Clock, Settings2 } from "lucide-react";
@@ -8,7 +9,7 @@ import { FinalCta } from "@/components/sections/final-cta";
 
 export const metadata: Metadata = {
   title: "Programme de parrainage",
-  description: "Parrainez un proche chez FINORA Academy : apprenez ensemble, avancez ensemble.",
+  description: `Parrainez un proche chez ${BRAND.name} : apprenez ensemble, avancez ensemble.`,
   alternates: { canonical: "/parrainage" },
 };
 
@@ -22,7 +23,7 @@ const rules = [
 export default function ReferralPage() {
   return (
     <>
-      <PageHero visual={visuels.tirelire} eyebrow="Parrainage" title="Apprenez ensemble, avancez ensemble." description="Partagez FINORA Academy avec vos proches grâce à votre lien personnel, disponible dans votre espace adhérent." />
+      <PageHero visual={visuels.tirelire} eyebrow="Parrainage" title="Apprenez ensemble, avancez ensemble." description={`Partagez ${BRAND.name} avec vos proches grâce à votre lien personnel, disponible dans votre espace adhérent.`} />
       <Referral withCta={false} />
       <section className="pb-20">
         <Container>

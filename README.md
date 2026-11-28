@@ -1,4 +1,4 @@
-# FINORA Academy
+# Plenty
 
 Plateforme d'éducation financière de Chris, conçue et développée par **DamCompany** (devis n°107 du 16/11/2026).
 
@@ -40,7 +40,8 @@ Prévu : Supabase (PostgreSQL, Auth, Storage, RLS) · Stripe (Checkout, Billing,
 ## Documentation
 
 - `PROJECT_BRIEF.md` : besoin client et périmètre contractuel
-- `BRAND_GUIDELINES.md` : charte graphique (PDF : `public/brand/FINORA-charte-graphique.pdf`)
+- `BRAND_GUIDELINES.md` : charte graphique Plenty (fichiers : `public/branding/plenty/`, configuration : `src/config/brand.ts`)
+- `docs/REBRANDING_PLENTY.md` : rapport du rebranding, tests et procédure de renommage externe
 - `ARCHITECTURE.md` : organisation du code et choix techniques
 - `DATABASE_SCHEMA.md` : modèle de données cible
 - `SECURITY.md` : mesures de sécurité

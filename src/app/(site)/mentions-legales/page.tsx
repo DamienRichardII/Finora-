@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { LegalPage, Todo } from "@/components/site/legal-page";
 
@@ -8,7 +9,7 @@ export default function Page() {
     <LegalPage title="Mentions légales" updated="27 novembre 2026">
       <h2>Éditeur du site</h2>
       <p>
-        Le site FINORA Academy est édité par <Todo>dénomination sociale</Todo>, <Todo>forme juridique</Todo> au capital de <Todo>montant</Todo> €, immatriculée au RCS de <Todo>ville</Todo> sous le numéro <Todo>SIREN</Todo>, dont le siège social est situé <Todo>adresse</Todo>.
+        Le site {BRAND.name} est édité par <Todo>dénomination sociale</Todo>, <Todo>forme juridique</Todo> au capital de <Todo>montant</Todo> €, immatriculée au RCS de <Todo>ville</Todo> sous le numéro <Todo>SIREN</Todo>, dont le siège social est situé <Todo>adresse</Todo>.
       </p>
       <p>
         Directeur de la publication : <Todo>nom du responsable</Todo>. Contact : <Todo>adresse e-mail professionnelle</Todo>. Numéro de TVA intracommunautaire : <Todo>numéro ou mention d&apos;exonération</Todo>.
@@ -21,7 +22,7 @@ export default function Page() {
       <p>Site conçu et développé par DamCompany.</p>
       <h2>Nature de l&apos;activité</h2>
       <p>
-        FINORA Academy propose des contenus d&apos;éducation financière à vocation pédagogique et informative. FINORA Academy n&apos;est ni une banque, ni un établissement financier agréé, et ne fournit pas de conseil en investissement personnalisé. Les contenus ne constituent pas, par eux-mêmes, une recommandation d&apos;investissement personnalisée. Tout investissement comporte des risques, notamment un risque de perte en capital.
+        {BRAND.name} propose des contenus d&apos;éducation financière à vocation pédagogique et informative. {BRAND.name} n&apos;est ni une banque, ni un établissement financier agréé, et ne fournit pas de conseil en investissement personnalisé. Les contenus ne constituent pas, par eux-mêmes, une recommandation d&apos;investissement personnalisée. Tout investissement comporte des risques, notamment un risque de perte en capital.
       </p>
       <h2>Propriété intellectuelle</h2>
       <p>

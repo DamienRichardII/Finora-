@@ -1,3 +1,4 @@
+import { BRAND, conceptDir } from "@/config/brand";
 import { Benefits } from "@/components/sections/benefits";
 import { FaqList } from "@/components/sections/faq-list";
 import { FinalCta } from "@/components/sections/final-cta";
@@ -22,7 +23,7 @@ export default function HomePage() {
           slogan: site.slogan,
           description: site.description,
           url: site.url,
-          logo: `${site.url}/brand/png/finora-icone-512.png`,
+          logo: `${site.url}${BRAND.assetsPath}/favicons/${conceptDir[BRAND.logoConcept]}/icon-512.png`,
         }}
       />
       <Hero />

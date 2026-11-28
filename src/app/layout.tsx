@@ -3,13 +3,14 @@ import "@fontsource-variable/manrope";
 import "@fontsource-variable/inter";
 import "./globals.css";
 import { site } from "@/content/site";
+import { BRAND } from "@/config/brand";
 
 // Polices auto-hébergées (aucun appel à un serveur tiers : conforme RGPD).
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "FINORA Academy | Formation en éducation financière en ligne",
-    template: "%s | FINORA Academy",
+    default: BRAND.seo.title,
+    template: `%s | ${BRAND.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -26,16 +27,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: site.name,
-    title: "FINORA Academy | Maîtrisez votre argent, construisez votre avenir",
+    title: BRAND.seo.title,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "FINORA Academy" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${BRAND.name}, ${BRAND.description.toLowerCase()}` }],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: BRAND.seo.title,
+    description: site.description,
+    images: ["/og.png"],
+  },
   alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#101F2C",
+  themeColor: BRAND.colors.primary,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

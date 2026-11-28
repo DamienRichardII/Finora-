@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { LegalPage, Todo } from "@/components/site/legal-page";
 
@@ -8,7 +9,7 @@ export default function Page() {
     <LegalPage title="Conditions générales de vente" updated="27 novembre 2026">
       <h2>1. Objet</h2>
       <p>
-        Les présentes conditions régissent la vente des formations en ligne, abonnements et ateliers proposés par <Todo>dénomination sociale</Todo> sous la marque FINORA Academy aux consommateurs.
+        Les présentes conditions régissent la vente des formations en ligne, abonnements et ateliers proposés par <Todo>dénomination sociale</Todo> sous la marque {BRAND.name} aux consommateurs.
       </p>
       <h2>2. Offres et prix</h2>
       <p>Les packs, leur contenu et leurs prix sont présentés sur la page Packs et tarifs. Les prix sont indiqués en euros toutes taxes comprises. Le prix applicable est celui affiché au moment de la commande.</p>

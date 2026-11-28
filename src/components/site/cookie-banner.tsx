@@ -1,4 +1,5 @@
 "use client";
+import { BRAND } from "@/config/brand";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -44,7 +45,7 @@ export function CookieBanner() {
   return (
     <div role="dialog" aria-live="polite" aria-label="Gestion des cookies" className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-xl rounded-2xl border border-navy/10 bg-white p-5 shadow-lift sm:bottom-5">
       <p className="text-sm leading-relaxed text-slate">
-        Nous utilisons uniquement des cookies nécessaires au fonctionnement du site. Avec votre accord, nous pourrons mesurer l&apos;audience de façon anonyme pour améliorer FINORA Academy.{" "}
+        Nous utilisons uniquement des cookies nécessaires au fonctionnement du site. Avec votre accord, nous pourrons mesurer l&apos;audience de façon anonyme pour améliorer {BRAND.name}.{" "}
         <Link href="/cookies" className="font-medium text-navy underline underline-offset-2">
           En savoir plus
         </Link>

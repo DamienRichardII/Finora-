@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "brand": "node scripts/build-brand.mjs",
+    "brand": "node scripts/build-plenty-brand.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

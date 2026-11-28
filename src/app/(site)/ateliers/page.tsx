@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { visuels } from "@/assets/visuels";
 import { CalendarCheck, MailCheck, PlaySquare } from "lucide-react";
@@ -7,7 +8,7 @@ import { WorkshopsList } from "@/components/sections/workshops-list";
 
 export const metadata: Metadata = {
   title: "Ateliers et cours d'éducation financière",
-  description: "Participez aux ateliers collectifs FINORA Academy, en ligne ou en présentiel : budget, épargne, crédit. Places limitées.",
+  description: `Participez aux ateliers collectifs ${BRAND.name}, en ligne ou en présentiel : budget, épargne, crédit. Places limitées.`,
   alternates: { canonical: "/ateliers" },
 };
 

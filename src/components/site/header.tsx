@@ -1,4 +1,5 @@
 "use client";
+import { BRAND } from "@/config/brand";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,7 +41,7 @@ export function Header() {
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-6 lg:h-20">
-        <Link href="/" aria-label="FINORA Academy, retour à l'accueil" onClick={() => setOpen(false)}>
+        <Link href="/" aria-label={`${BRAND.name}, retour à l'accueil`} onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 

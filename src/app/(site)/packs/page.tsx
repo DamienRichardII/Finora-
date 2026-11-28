@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { CreditCard, RefreshCcw, ShieldCheck, Tag } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -6,12 +7,12 @@ import { Pricing } from "@/components/sections/pricing";
 
 export const metadata: Metadata = {
   title: "Packs et tarifs",
-  description: "Comparez les packs FINORA Academy : Découverte, Essentiel et Premium. Formations vidéo, ateliers collectifs et accompagnement pédagogique.",
+  description: `Comparez les packs ${BRAND.name} : Découverte, Essentiel et Premium. Formations vidéo, ateliers collectifs et accompagnement pédagogique.`,
   alternates: { canonical: "/packs" },
 };
 
 const guarantees = [
-  { icon: ShieldCheck, title: "Paiement sécurisé", text: "Paiement prévu via Stripe. Vos données bancaires ne sont jamais stockées par FINORA Academy." },
+  { icon: ShieldCheck, title: "Paiement sécurisé", text: `Paiement prévu via Stripe. Vos données bancaires ne sont jamais stockées par ${BRAND.name}.` },
   { icon: CreditCard, title: "Carte, Apple Pay, Google Pay", text: "Selon la compatibilité de votre appareil." },
   { icon: Tag, title: "Codes promo et parrainage", text: "Saisissez votre code lors du récapitulatif de commande." },
   { icon: RefreshCcw, title: "Résiliation encadrée", text: "Conditions de résiliation et droit de rétractation détaillés dans les CGV." },

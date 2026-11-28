@@ -1,9 +1,9 @@
-# Guide client — FINORA Academy
+# Guide client — Plenty
 
 Bonjour Chris, ce guide explique ce qui est prêt, comment modifier vos contenus et ce dont nous avons besoin de votre part.
 
 ## Ce qui est prêt
-- Votre identité visuelle (logo et charte : `public/brand/FINORA-charte-graphique.pdf`).
+- Votre identité visuelle (logo et charte : `public/branding/plenty/` et `BRAND_GUIDELINES.md`).
 - Le site public complet, consultable sur ordinateur, tablette et smartphone.
 - Le site n'affiche aucune mention de démonstration. Les informations manquantes listées ci-dessous restent à fournir : tant qu'elles manquent, les sections concernées sont masquées (avis, diplômes, réseaux sociaux) ou présentées sans date (ateliers). Les pages légales contiennent encore des champs entre crochets (raison sociale, SIREN, adresse, médiateur…) à remplir avant l'ouverture commerciale.
 - Les tarifs affichés restent des hypothèses à valider avant toute vente.
@@ -22,7 +22,9 @@ Jusqu'à la phase 7, les textes sont regroupés dans quelques fichiers que DamCo
 Avec l'espace administrateur (phase 7), vous modifierez tout cela vous-même, sans code.
 
 ## Checklist des informations à fournir
-- [ ] Validation du nom **FINORA Academy** (et vérification INPI)
+- [x] Nom officiel **Plenty** validé
+- [ ] Choix du logo parmi les 3 concepts (page `/branding-preview` de la préversion)
+- [ ] Vérification INPI / EUIPO du nom et du logo
 - [ ] Validation du logo et de la charte graphique
 - [ ] Photographies professionnelles (portrait, et si possible visuels en situation)
 - [ ] Biographie
@@ -45,4 +47,4 @@ Avec l'espace administrateur (phase 7), vous modifierez tout cela vous-même, sa
 Hébergement Vercel Pro, Supabase (gratuit au départ, Pro conseillé pour les sauvegardes), commission Stripe par paiement, Resend (gratuit jusqu'à un certain volume), hébergement vidéo (selon le volume), nom de domaine. Aucun service payant ne sera souscrit sans votre accord.
 
 ## Important
-FINORA Academy est un organisme d'éducation financière : elle ne doit pas délivrer de conseil en investissement personnalisé sans les qualifications et autorisations requises, ni promettre de rendement.
+Plenty est un organisme d'éducation financière : elle ne doit pas délivrer de conseil en investissement personnalisé sans les qualifications et autorisations requises, ni promettre de rendement.
