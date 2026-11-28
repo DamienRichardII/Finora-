@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
@@ -74,7 +75,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-4 py-6 text-xs sm:flex-row sm:items-center sm:justify-between">
-          <p>© {site.name}. Tous droits réservés. FINORA Academy n&apos;est ni une banque ni un établissement financier agréé.</p>
+          <p>© {site.name}. Tous droits réservés. {BRAND.name} n&apos;est ni une banque ni un établissement financier agréé.</p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             {legalNav.map((l) => (
               <li key={l.href}>

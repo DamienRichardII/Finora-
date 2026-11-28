@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ export default function LoginPage() {
   return (
     <AuthShell
       title="Se connecter"
-      description="Accédez à votre espace adhérent FINORA Academy."
+      description={`Accédez à votre espace adhérent ${BRAND.name}.`}
       footer={
         <>
           Pas encore de compte ?{" "}

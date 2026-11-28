@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Clock, MessageSquareText } from "lucide-react";
@@ -7,7 +8,7 @@ import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contactez FINORA Academy pour toute question sur les formations, les ateliers ou votre inscription.",
+  description: `Contactez ${BRAND.name} pour toute question sur les formations, les ateliers ou votre inscription.`,
   alternates: { canonical: "/contact" },
 };
 

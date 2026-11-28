@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import { ArrowRight, Gift, Link2, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -23,7 +24,7 @@ export function Referral({ withCta = true }: { withCta?: boolean }) {
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-navy/60">Programme de parrainage</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-navy sm:text-4xl">Apprenez ensemble, avancez ensemble.</h2>
-                <p className="mt-4 max-w-md text-navy/70">Invitez un proche à rejoindre FINORA Academy et progressez à deux. Des avantages pour vous et pour votre filleul, selon les conditions du programme.</p>
+                <p className="mt-4 max-w-md text-navy/70">Invitez un proche à rejoindre {BRAND.name} et progressez à deux. Des avantages pour vous et pour votre filleul, selon les conditions du programme.</p>
                 {withCta && (
                   <ButtonLink href="/parrainage" variant="navy" className="mt-8">
                     Découvrir le parrainage <ArrowRight />

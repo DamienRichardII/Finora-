@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { visuels } from "@/assets/visuels";
 import { BookOpenCheck, PlayCircle, FileDown, BarChart3 } from "lucide-react";
@@ -36,7 +37,7 @@ export default function FormationsPage() {
           })),
         }}
       />
-      <PageHero visual={visuels.graphiques} eyebrow="Formations" title="Le programme FINORA Academy" description="Un parcours en huit modules vidéo, des fondamentaux jusqu'à votre stratégie financière à long terme.">
+      <PageHero visual={visuels.graphiques} eyebrow="Formations" title={`Le programme ${BRAND.name}`} description="Un parcours en huit modules vidéo, des fondamentaux jusqu'à votre stratégie financière à long terme.">
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
           {features.map(({ icon: Icon, label }) => (
             <li key={label} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80">

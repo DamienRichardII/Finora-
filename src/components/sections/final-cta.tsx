@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import { ArrowRight } from "lucide-react";
 import { Monogram } from "@/components/brand/logo";
 import { ButtonLink } from "@/components/ui/button";
@@ -14,7 +15,7 @@ export function FinalCta() {
             <h2 className="relative mx-auto max-w-2xl text-3xl font-extrabold leading-tight sm:text-5xl">Prêt à reprendre le contrôle de vos finances ?</h2>
             <p className="relative mx-auto mt-5 max-w-lg text-white/70">Commencez dès aujourd&apos;hui votre parcours d&apos;éducation financière, à votre rythme.</p>
             <ButtonLink href="/packs" size="lg" className="relative mt-9">
-              Rejoindre FINORA Academy <ArrowRight />
+              Rejoindre {BRAND.name} <ArrowRight />
             </ButtonLink>
           </div>
         </Reveal>

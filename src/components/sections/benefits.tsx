@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import { Wallet, PiggyBank, TrendingUp, Route } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -14,7 +15,7 @@ export function Benefits() {
   return (
     <section className="py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow="Pourquoi FINORA Academy" title="Des compétences utiles pour toute la vie" description="Une pédagogie progressive pour passer de la compréhension à l'action, sans jargon et sans promesse irréaliste." />
+        <SectionHeading eyebrow={`Pourquoi choisir ${BRAND.name}`} title="Des compétences utiles pour toute la vie" description="Une pédagogie progressive pour passer de la compréhension à l'action, sans jargon et sans promesse irréaliste." />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ icon: Icon, title, text }, i) => (
             <Reveal key={title} delay={i * 80}>

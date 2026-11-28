@@ -24,7 +24,7 @@ npm run lint && npm run typecheck && npm run build
 
 ## Avant ouverture commerciale
 - [ ] Documents juridiques complétés et validés par un professionnel
-- [ ] Nom FINORA Academy vérifié (INPI) 
+- [ ] Nom Plenty et logo vérifiés (INPI / EUIPO) 
 - [ ] Tarifs et packs validés par Chris
 - [ ] Aucun contenu fictif restant, champs légaux entre crochets remplis
 - [ ] Paiement testé de bout en bout en mode test, puis un paiement réel de faible montant remboursé

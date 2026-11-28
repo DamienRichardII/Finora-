@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -14,7 +15,7 @@ export function Testimonials() {
   return (
     <section className="bg-white py-20 sm:py-28">
       <Container>
-        <SectionHeading eyebrow="Avis des adhérents" title="Ils apprennent avec FINORA Academy" />
+        <SectionHeading eyebrow="Avis des adhérents" title={`Ils apprennent avec ${BRAND.name}`} />
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {reviews.map((r) => (
             <figure key={r.author} className="flex flex-col rounded-card border border-navy/[0.06] bg-ivory p-7">

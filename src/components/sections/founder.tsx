@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import { ArrowRight, Briefcase, GraduationCap, Eye } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -31,7 +32,7 @@ export function Founder({ withCta = true, photo = photosFondateur.bureau }: { wi
             />
             <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-4 backdrop-blur">
               <p className="font-display text-base font-bold text-navy">{f.firstName}</p>
-              <p className="text-sm text-slate">Fondateur de FINORA Academy</p>
+              <p className="text-sm text-slate">Fondateur de {BRAND.name}</p>
             </div>
           </div>
         </Reveal>
@@ -40,7 +41,7 @@ export function Founder({ withCta = true, photo = photosFondateur.bureau }: { wi
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold-ink">Le fondateur</p>
           <h2 className="text-3xl font-bold leading-tight text-navy sm:text-4xl">Rendre l&apos;éducation financière accessible à tous</h2>
           <p className="mt-5 text-lg leading-relaxed text-slate">
-            {f.bio ?? "Après plusieurs années dans le secteur financier, Chris a fondé FINORA Academy avec une conviction : comprendre l'argent ne devrait pas être réservé à quelques-uns."}
+            {f.bio ?? `Après plusieurs années dans le secteur financier, Chris a fondé ${BRAND.name} avec une conviction : comprendre l'argent ne devrait pas être réservé à quelques-uns.`}
           </p>
 
           <dl className="mt-8 space-y-4">

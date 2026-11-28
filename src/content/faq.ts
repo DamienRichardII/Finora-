@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 /** FAQ — réponses provisoires à valider par Chris (table `site_settings` / FAQ en phase 7). */
 export const faq = [
   {
@@ -26,6 +27,6 @@ export const faq = [
   },
   {
     q: "Quels moyens de paiement sont acceptés ?",
-    a: "Le paiement est prévu par carte bancaire via une plateforme sécurisée (Stripe), ainsi que par Apple Pay et Google Pay selon la compatibilité de votre appareil. FINORA Academy ne stocke jamais vos données bancaires.",
+    a: `Le paiement est prévu par carte bancaire via une plateforme sécurisée (Stripe), ainsi que par Apple Pay et Google Pay selon la compatibilité de votre appareil. ${BRAND.name} ne stocke jamais vos données bancaires.`,
   },
 ];

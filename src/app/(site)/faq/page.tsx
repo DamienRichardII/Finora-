@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ui/button";
 import { FaqList } from "@/components/sections/faq-list";
@@ -5,7 +6,7 @@ import { PageHero } from "@/components/sections/page-hero";
 
 export const metadata: Metadata = {
   title: "Questions fréquentes",
-  description: "Toutes les réponses sur les formations FINORA Academy : accès aux vidéos, ateliers, parrainage, paiement.",
+  description: `Toutes les réponses sur les formations ${BRAND.name} : accès aux vidéos, ateliers, parrainage, paiement.`,
   alternates: { canonical: "/faq" },
 };
 

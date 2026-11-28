@@ -1,21 +1,37 @@
-# Charte graphique — FINORA Academy (v1.0, proposition à valider)
+# Charte graphique — Plenty (v2.0, logo en attente de validation)
 
-Version mise en page : `public/brand/FINORA-charte-graphique.pdf` (source : `brand/charte.html`).
+Nom officiel : **Plenty** (jamais « Plenty Academy »). Slogan : « Comprendre. Maîtriser. Construire. » Accroche : « Maîtrisez votre argent, construisez votre avenir. » Variante proposée, non validée : « Le savoir au service de la liberté. »
+
+Configuration de marque unique : `src/config/brand.ts` (nom, accroches, SEO, signature e-mail, concept de logo, couleurs).
 
 ## Logo
-**Monogramme** : un F géométrique dont le bras supérieur s'élève en flèche de progression (comprendre → maîtriser → construire). Dessin volontairement architectural, sans codes du trading.
+Trois concepts inspirés de symboles Adinkra, réinterprétés de façon contemporaine (ce ne sont ni des reproductions ni de nouveaux symboles traditionnels) :
 
-| Fichier (public/brand) | Usage |
+| Concept (nom interne) | Inspiration | Idée |
+|---|---|---|
+| 01 · Freedom (recommandé) | Fawohodie | Liberté, indépendance, émancipation et responsabilité : l'autonomie financière par l'éducation |
+| 02 · Wisdom | Nyansapao | Le nœud de la sagesse : intelligence, ingéniosité, patience |
+| 03 · Heritage | Fawohodie et Nyansapao | Nœud entrelacé ouvert en X, tenu par deux barres |
+
+Seul le nom « Plenty » apparaît sur les logos. Logotype : PLENTY en capitales Manrope SemiBold, interlettrage 0,3 em (la version « Plenty » en bas de casse est réservée aux usages éditoriaux). Le concept affiché sur le site se règle dans `BRAND.logoConcept`.
+
+Fichiers (`public/branding/plenty/`, générés par `npm run brand`, ne pas éditer à la main) :
+
+| Dossier | Contenu |
 |---|---|
-| `finora-principal-*` | Logo principal : monogramme + FINORA / ACADEMY empilés |
-| `finora-horizontal-*` | Une ligne, pour bandeaux et signatures e-mail |
-| `finora-vertical-*` | Monogramme centré au-dessus du nom, réseaux sociaux, couvertures |
-| `finora-monogramme-*` | Monogramme seul |
-| `finora-icone.svg` / `png/finora-icone-512.png` | Favicon, icône d'application (or sur bleu profond) |
+| `concept-0X-*/svg` | `plenty-{horizontal,vertical,symbole}-{principal,dore-sur-bleu-nuit,dore-sur-blanc,noir-sur-blanc,blanc-sur-bleu-nuit,bleu-nuit-sur-ivoire,transparent}.svg`, plus `-{dore,blanc,noir,bleu-nuit}-transparent.svg` |
+| `concept-0X-*/png` | PNG transparents 4096 px, PNG sur fond blanc et sur fond bleu nuit |
+| `concept-0X-*/jpg` | JPEG 4096 px (or sur bleu profond) |
+| `favicons/concept-0X-*` | `favicon.ico` (16/32/48), `favicon.svg`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`, `app-icon-1024.png` |
+| `social/concept-0X-*` | Photo de profil 1080 px (SVG et PNG), image de partage 1200 × 630 |
+| `patterns` | Motifs raccordables à faible opacité (SVG) et aperçus |
+| `previews` | Planche par concept (SVG et PNG) et planche comparative |
 
-Variantes : `sur-fond-sombre` (texte blanc, accents or), `sur-fond-clair` (texte bleu profond), `blanc`, `noir`, `dore`. Tous les SVG ont un fond transparent ; PNG 2400 px (logos) et 1024 px (monogrammes) dans `public/brand/png`. Les textes sont vectorisés (aucune police requise).
+Tous les SVG sont de vrais tracés vectoriels (textes convertis en contours). Règles : zone de protection = un quart de la hauteur du symbole ; taille minimale 16 px (symbole, trait épaissi), 120 px (logo horizontal) ; ne pas déformer, recolorer hors palette, ajouter ombre, dégradé ou effet métallique.
 
-Règles : zone de protection = hauteur du bras médian ; taille minimale 24 px (monogramme), 120 px (principal) ; ne pas déformer, recolorer hors palette, ajouter ombre ou contour. Régénération : `npm run brand`.
+Respect culturel : ne pas inventer de signification historique, ne pas reprendre l'identité d'Atelier Adinkra (logo, typographie, encadrements). Vérifier la disponibilité juridique du nom et du logo (INPI, EUIPO) avant exploitation commerciale.
+
+Archive : l'ancienne identité FINORA Academy reste dans `public/brand/` (non supprimée, plus utilisée par le site).
 
 ## Couleurs
 | Nom | HEX | Token Tailwind | Usage |
@@ -44,9 +60,9 @@ Proportions : 60 % ivoire/blanc, 30 % bleu profond, 10 % or.
 | Bouton (`gold`, `navy`, `outline-light`, `outline-dark`, `ghost` × `sm/md/lg`) | `src/components/ui/button.tsx` |
 | Conteneur, titre de section, champ de formulaire, badges | `src/components/ui/*` |
 | Apparition au scroll (respecte `prefers-reduced-motion`) | `src/components/ui/reveal.tsx` |
-| Logo React | `src/components/brand/logo.tsx` |
+| Logo React (`BrandSymbol`, `Wordmark`, `Logo`) | `src/components/brand/logo.tsx`, géométrie `src/components/brand/symbols.ts` |
 
 Principes : cartes arrondies 20 px, ombres douces, boutons en pilule, icônes Lucide, sections de 80 à 112 px de hauteur de marge, fonds sombres avec halo doré très léger (`.bg-navy-grain`).
 
 ## Ton éditorial
-On dit : comprendre, apprendre, progresser, construire ; exemples concrets ; risques toujours mentionnés. On ne dit jamais : « devenez riche », rendement garanti, « liberté financière en X jours », ni que FINORA Academy est une banque ou un conseiller agréé. L'avertissement pédagogique figure dans le footer et sur chaque page formation.
+On dit : comprendre, apprendre, progresser, construire ; exemples concrets ; risques toujours mentionnés. On ne dit jamais : « devenez riche », rendement garanti, « liberté financière en X jours », ni que Plenty est une banque ou un conseiller agréé. L'avertissement pédagogique figure dans le footer et sur chaque page formation.

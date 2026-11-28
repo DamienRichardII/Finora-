@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 /**
  * Contenus éditoriaux du site public.
  * Phase 4+ : ces données seront lues depuis la table `site_settings` (Supabase)
@@ -5,11 +6,11 @@
  * informations à fournir par le client : ils ne sont jamais inventés.
  */
 export const site = {
-  name: "FINORA Academy",
-  slogan: "Comprendre. Maîtriser. Construire.",
-  tagline: "Maîtrisez votre argent, construisez votre avenir.",
+  name: BRAND.name,
+  slogan: BRAND.tagline,
+  tagline: BRAND.headline,
   description:
-    "FINORA Academy, académie en ligne d'éducation financière : des formations vidéo, des ateliers et des cours pour apprendre à gérer son budget, comprendre l'épargne et découvrir l'investissement.",
+    BRAND.seo.description,
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   /** Version de démonstration : affiche un bandeau et identifie les contenus fictifs. */
   demoMode: process.env.NEXT_PUBLIC_DEMO_MODE === "true",
@@ -21,7 +22,7 @@ export const site = {
   /** Réseaux sociaux : vides tant que le client ne les a pas communiqués. */
   socials: [] as { label: string; href: string }[],
   disclaimer:
-    "Les contenus proposés par FINORA Academy ont une vocation éducative et informative. Ils ne constituent pas, par eux-mêmes, une recommandation d'investissement personnalisée. Tout investissement comporte des risques, notamment un risque de perte en capital.",
+    `Les contenus proposés par ${BRAND.name} ont une vocation éducative et informative. Ils ne constituent pas, par eux-mêmes, une recommandation d'investissement personnalisée. Tout investissement comporte des risques, notamment un risque de perte en capital.`,
   founder: {
     firstName: "Chris",
     experience: "Trois ans et demi d'expérience dans le domaine financier.",

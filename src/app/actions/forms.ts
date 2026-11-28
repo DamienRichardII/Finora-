@@ -1,4 +1,5 @@
 "use server";
+import { BRAND } from "@/config/brand";
 
 import { headers } from "next/headers";
 import { sendEmail } from "@/lib/email";
@@ -45,7 +46,7 @@ export async function submitContact(_: FormState, fd: FormData): Promise<FormSta
   if (!rateLimit(await clientKey("contact"))) return { status: "error", message: "Trop de messages envoyés. Réessayez dans quelques minutes.", values };
 
   const res = await sendEmail({
-    subject: `[Contact FINORA] ${subject || "Nouveau message"}`,
+    subject: `[Contact ${BRAND.name}] ${subject || "Nouveau message"}`,
     text: `Nom : ${name}\nE-mail : ${email}\nSujet : ${subject}\n\n${message}`,
     replyTo: email,
   });
@@ -60,7 +61,7 @@ export async function subscribeNewsletter(_: FormState, fd: FormData): Promise<F
   if (!rateLimit(await clientKey("newsletter"), 3)) return { status: "error", message: "Trop de tentatives. Réessayez plus tard." };
 
   // Phase 7 : enregistrement en base (double opt-in). En attendant, notification à l'équipe si l'e-mail est configuré.
-  const res = await sendEmail({ subject: "[FINORA] Nouvelle inscription newsletter", text: `Adresse : ${email}` });
+  const res = await sendEmail({ subject: `[${BRAND.name}] Nouvelle inscription newsletter`, text: `Adresse : ${email}` });
   if (!res.ok)
     return {
       status: "error",

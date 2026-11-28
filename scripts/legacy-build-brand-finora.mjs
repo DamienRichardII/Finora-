@@ -1,4 +1,4 @@
-// Génère le logo FINORA Academy (SVG vectorisés + PNG haute résolution).
+// ARCHIVE : ancien générateur du logo FINORA Academy (remplacé par build-plenty-brand.mjs). Ne plus lancer : il écraserait les favicons Plenty.
 // Usage : node scripts/build-brand.mjs
 import fs from "node:fs";
 import path from "node:path";

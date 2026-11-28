@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { visuels } from "@/assets/visuels";
-import { Monogram } from "@/components/brand/logo";
+import { BrandSymbol } from "@/components/brand/logo";
+import { BRAND } from "@/config/brand";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { CountUp } from "@/components/ui/count-up";
@@ -26,9 +27,9 @@ export function Hero() {
       <Container className="relative flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center py-12 text-center sm:min-h-0 sm:justify-start sm:pb-20 sm:pt-24 lg:pt-28">
         {/* Logo dominant */}
         <div className="flex flex-col items-center">
-          <Monogram className="size-20 sm:size-24 lg:size-28" />
-          <p className="mt-6 font-display text-5xl font-extrabold leading-none tracking-[0.06em] sm:text-7xl lg:text-8xl">FINORA</p>
-          <p className="mt-3 font-display text-sm font-bold tracking-[0.55em] text-gold sm:text-base">ACADEMY</p>
+          <BrandSymbol className="size-20 sm:size-24 lg:size-28" />
+          <p className="mt-7 -mr-[0.3em] font-display text-5xl font-semibold uppercase leading-none tracking-[0.3em] sm:text-7xl lg:text-8xl">{BRAND.name}</p>
+          <p className="mt-4 -mr-[0.42em] font-display text-xs font-bold uppercase tracking-[0.42em] text-gold sm:text-sm">{BRAND.descriptor}</p>
         </div>
 
         <h1 className="mt-10 text-[clamp(1.25rem,3.1vw,2.5rem)] font-bold leading-snug sm:whitespace-nowrap">

@@ -1,3 +1,4 @@
+import { BRAND } from "@/config/brand";
 import type { Metadata } from "next";
 import { LegalPage, Todo } from "@/components/site/legal-page";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = { title: "Politique de confidentialité", alte
 export default function Page() {
   return (
     <LegalPage title="Politique de confidentialité" updated="27 novembre 2026">
-      <p>FINORA Academy attache une grande importance à la protection de vos données personnelles, traitées conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.</p>
+      <p>{BRAND.name} attache une grande importance à la protection de vos données personnelles, traitées conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.</p>
       <h2>Responsable du traitement</h2>
       <p>
         <Todo>dénomination sociale et adresse</Todo>, joignable à <Todo>adresse e-mail de contact RGPD</Todo>.
@@ -14,7 +15,7 @@ export default function Page() {
       <h2>Données collectées et finalités</h2>
       <ul>
         <li>Création et gestion de votre compte adhérent (identité, e-mail, mot de passe chiffré) : exécution du contrat.</li>
-        <li>Commandes, abonnements et facturation (historique de paiements, factures) : exécution du contrat et obligations légales. Les données de carte bancaire sont traitées exclusivement par notre prestataire de paiement Stripe et ne sont jamais stockées par FINORA Academy.</li>
+        <li>Commandes, abonnements et facturation (historique de paiements, factures) : exécution du contrat et obligations légales. Les données de carte bancaire sont traitées exclusivement par notre prestataire de paiement Stripe et ne sont jamais stockées par {BRAND.name}.</li>
         <li>Suivi pédagogique (progression, notes personnelles, réservations d&apos;ateliers) : exécution du contrat.</li>
         <li>Messagerie et demandes de contact : intérêt légitime à vous répondre.</li>
         <li>Newsletter : consentement, retirable à tout moment.</li>
@@ -26,7 +27,7 @@ export default function Page() {
       </p>
       <h2>Destinataires et sous-traitants</h2>
       <p>
-        Vos données sont destinées à FINORA Academy et à ses sous-traitants techniques : hébergement (Vercel), paiement (Stripe), base de données, envoi d&apos;e-mails et diffusion vidéo. Certains peuvent être situés hors de l&apos;Union européenne ; les transferts sont alors encadrés par des garanties appropriées.
+        Vos données sont destinées à {BRAND.name} et à ses sous-traitants techniques : hébergement (Vercel), paiement (Stripe), base de données, envoi d&apos;e-mails et diffusion vidéo. Certains peuvent être situés hors de l&apos;Union européenne ; les transferts sont alors encadrés par des garanties appropriées.
       </p>
       <h2>Vos droits</h2>
       <p>
