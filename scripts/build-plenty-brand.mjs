@@ -128,10 +128,10 @@ const png = (s, file, width, bg) => {
 };
 const mk = (...p) => { const d = path.join(OUT, ...p); fs.mkdirSync(d, { recursive: true }); return d; };
 
-/** Fichier ICO contenant des PNG (16, 32, 48). */
-async function ico(s, file) {
+/** Fichier ICO contenant des PNG : `svgFor(taille)` donne le SVG adapté à chaque taille. */
+async function ico(svgFor, file) {
   const sizes = [16, 32, 48];
-  const imgs = await Promise.all(sizes.map((z) => sharp(Buffer.from(s), { density: 300 }).resize(z, z).png().toBuffer()));
+  const imgs = await Promise.all(sizes.map((z) => sharp(Buffer.from(svgFor(z)), { density: (72 * z) / 100 }).resize(z, z).png().toBuffer()));
   const head = Buffer.alloc(6 + 16 * sizes.length);
   head.writeUInt16LE(0, 0); head.writeUInt16LE(1, 2); head.writeUInt16LE(sizes.length, 4);
   let offset = head.length;
@@ -145,10 +145,19 @@ async function ico(s, file) {
   fs.writeFileSync(file, Buffer.concat([head, ...imgs]));
 }
 
-/** Icône carrée : symbole doré sur bleu profond. `rx` arrondi (0 pour iOS / Android adaptatif). */
-const appIcon = (id, rx = 0, scale = 0.62, small = true) => {
-  const S = 100 * scale, o = (100 - S) / 2;
-  return svg(100, 100, `<rect width="100" height="100" rx="${rx}" fill="${C.navy}"/>${symbol(id, C.gold, o, o, S, small)}`, null);
+/**
+ * Icône carrée : symbole doré sur bleu profond. `rx` arrondi (0 pour iOS / Android adaptatif).
+ * Si le concept a une version pleine (glyph), elle est utilisée : lisible dès 16 px.
+ * `tiny` (16 px) : silhouette seule, sans détails découpés.
+ */
+const appIcon = (id, rx = 0, scale = 0.62, small = true, tiny = false) => {
+  const S = 100 * scale, o = (100 - S) / 2, sym = SYMBOLS[id];
+  let mark;
+  if (sym.glyph) {
+    const g = sym.glyph;
+    mark = `<g transform="translate(${r(o)} ${r(o)}) scale(${r(S / 100)})"><g fill="${C.gold}" stroke="${C.gold}" stroke-width="3" stroke-linejoin="round">${g.fill.map((d) => `<path d="${d}"/>`).join("")}</g>${tiny ? "" : `<g fill="none" stroke="${C.navy}" stroke-width="${g.cutStroke}" stroke-linejoin="round">${g.cut.map((d) => `<path d="${d}"/>`).join("")}</g>`}</g>`;
+  } else mark = symbol(id, C.gold, o, o, S, small);
+  return svg(100, 100, `<rect width="100" height="100" rx="${rx}" fill="${C.navy}"/>${mark}`, null);
 };
 
 // ---------------------------------------------------------------------------
@@ -177,9 +186,9 @@ for (const id of Object.keys(SYMBOLS)) {
 
   // Favicons et icônes
   const fav = mk("favicons", dir);
-  const favSvg = appIcon(id, 22, 0.7, true);
+  const favSvg = appIcon(id, 22, 0.78, true);
   fs.writeFileSync(path.join(fav, "favicon.svg"), favSvg);
-  await ico(favSvg, path.join(fav, "favicon.ico"));
+  await ico((z) => appIcon(id, 22, z <= 16 ? 0.84 : 0.78, true, z <= 16), path.join(fav, "favicon.ico"));
   await png(appIcon(id, 0, 0.62), path.join(fav, "apple-touch-icon.png"), 180);
   await png(appIcon(id, 0, 0.62), path.join(fav, "icon-192.png"), 192);
   await png(appIcon(id, 0, 0.62), path.join(fav, "icon-512.png"), 512);
@@ -222,10 +231,9 @@ for (const id of Object.keys(SYMBOLS)) {
 // 3. Planches de présentation
 // ---------------------------------------------------------------------------
 function ogImage(id) {
-  const L = LAYOUTS.horizontal(id, C.gold, C.white, 0);
-  const sc = 2.6;
-  const head = text(F[600], "Maîtrisez votre argent, construisez votre avenir.", 34);
-  return svg(1200, 630, `<rect width="1200" height="630" fill="${C.navy}"/><defs><radialGradient id="g" cx="0.85" cy="0" r="0.85"><stop offset="0" stop-color="${C.gold}" stop-opacity="0.18"/><stop offset="1" stop-color="${C.gold}" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="630" fill="url(#g)"/><g transform="translate(${r(600 - (L.w * sc) / 2)} 170) scale(${sc})">${L.body}</g>${T(F[600], "Maîtrisez votre argent, construisez votre avenir.", 34, 600 - head.width / 2, 470, C.white, { opacity: 0.82 })}${T(F[600], "ÉDUCATION FINANCIÈRE", 18, 600, 530, C.gold, { tracking: 0.32, anchor: "middle" })}`, null);
+  // Composition centrée : reste lisible quand WhatsApp ou LinkedIn recadrent en carré.
+  const S = 190, wd = word(64), head = "Maîtrisez votre argent, construisez votre avenir.";
+  return svg(1200, 630, `<rect width="1200" height="630" fill="${C.navy}"/><defs><radialGradient id="g" cx="0.5" cy="0.32" r="0.6"><stop offset="0" stop-color="${C.gold}" stop-opacity="0.16"/><stop offset="1" stop-color="${C.gold}" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="630" fill="url(#g)"/>${symbol(id, C.gold, 600 - S / 2, 70, S)}<path transform="translate(${r(600 - wd.width / 2)} ${r(70 + S + 50 + wd.capH)})" fill="${C.gold}" d="${wd.d}"/>${T(F[600], head, 32, 600, 470, C.white, { anchor: "middle" })}${T(F[700], "ÉDUCATION FINANCIÈRE", 18, 600, 530, C.gold, { tracking: 0.32, anchor: "middle", opacity: 0.85 })}`, null);
 }
 
 /** Bouton arrondi (maquette). */
@@ -424,9 +432,12 @@ function comparison() {
 // ---------------------------------------------------------------------------
 {
   const appDir = path.join(root, "src/app");
-  const favSvg = appIcon(SITE_CONCEPT, 22, 0.7, true);
+  const favSvg = appIcon(SITE_CONCEPT, 22, 0.78, true);
   fs.writeFileSync(path.join(appDir, "icon.svg"), favSvg);
-  await ico(favSvg, path.join(appDir, "favicon.ico"));
+  await ico((z) => appIcon(SITE_CONCEPT, 22, z <= 16 ? 0.84 : 0.78, true, z <= 16), path.join(appDir, "favicon.ico"));
+  // Icônes PNG explicites (navigateurs et robots qui ignorent le SVG)
+  await png(appIcon(SITE_CONCEPT, 0, 0.62), path.join(root, "public/icon-192.png"), 192);
+  await png(appIcon(SITE_CONCEPT, 0, 0.62), path.join(root, "public/icon-512.png"), 512);
   await png(appIcon(SITE_CONCEPT, 0, 0.62), path.join(appDir, "apple-icon.png"), 180);
   await png(ogImage(SITE_CONCEPT), path.join(root, "public/og.png"), 1200);
   // Icônes du manifeste (public/branding/plenty/favicons/<concept>/icon-*.png) : déjà générées ci-dessus.

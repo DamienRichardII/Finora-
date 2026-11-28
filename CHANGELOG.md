@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.1] — 2026-11-28 — Favicon et miniature de partage
+
+### Modifié
+- Favicon en version pleine, nette à 16 et 32 px ; image de partage 1200 × 630 centrée (lisible en recadrage carré) ; paramètre de version sur les URLs de partage et du manifeste.
+
 ## [0.7.0] — 2026-11-28 — Rebranding Plenty (en attente du choix du logo)
 
 ### Ajouté
