@@ -11,7 +11,10 @@ export const site = {
   tagline: BRAND.headline,
   description:
     BRAND.seo.description,
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // Ordre : domaine configuré, sinon domaine de production Vercel (variable système), sinon local.
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
   /** Version de démonstration : affiche un bandeau et identifie les contenus fictifs. */
   demoMode: process.env.NEXT_PUBLIC_DEMO_MODE === "true",
   contact: {
