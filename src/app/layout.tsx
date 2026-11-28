@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: BRAND.seo.title,
     description: site.description,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: `${BRAND.name}, ${BRAND.description.toLowerCase()}` }],
+    images: [{ url: `/og.png?v=${BRAND.assetsVersion}`, width: 1200, height: 630, type: "image/png", alt: `${BRAND.name}, ${BRAND.description.toLowerCase()}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: BRAND.seo.title,
     description: site.description,
-    images: ["/og.png"],
+    images: [`/og.png?v=${BRAND.assetsVersion}`],
   },
   alternates: { canonical: "/" },
 };

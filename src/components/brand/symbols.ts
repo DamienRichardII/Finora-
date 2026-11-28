@@ -17,6 +17,8 @@ export type BrandSymbol = {
   stroke: number;
   /** Épaisseur conseillée pour les petites tailles (favicon, header mobile). */
   strokeSmall: number;
+  /** Version pleine pour favicons : silhouettes remplies, détails découpés (fond) à partir de 32 px. */
+  glyph?: { fill: string[]; cut: string[]; cutStroke: number };
 };
 
 const r2 = (n: number) => Math.round(n * 100) / 100;
@@ -70,6 +72,7 @@ const freedom: BrandSymbol = {
   stroke: 4.6,
   strokeSmall: 7,
   paths: [wing(1, 0), wing(1, 0, true), wing(0.56, 7.5), wing(0.56, 7.5, true)],
+  glyph: { fill: [wing(1, 0), wing(1, 0, true)], cut: [wing(0.56, 7.5), wing(0.56, 7.5, true)], cutStroke: 6 },
 };
 
 /** Concept 02, Wisdom : nœud vertical d'un seul trait, boucles entrelacées, inspiré de Nyansapao. */

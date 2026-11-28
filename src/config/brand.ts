@@ -24,6 +24,8 @@ export const BRAND = {
   },
   /** Concept de logo affiché sur le site, en attente du choix du client. */
   logoConcept: "freedom" as ConceptId,
+  /** Version des visuels de partage : à incrémenter pour forcer la mise à jour des caches (WhatsApp, LinkedIn…). */
+  assetsVersion: "20261128-2",
   /** Dossier des fichiers de marque générés par `npm run brand`. */
   assetsPath: "/branding/plenty",
   emailSignature: "L'équipe Plenty\nComprendre. Maîtriser. Construire.",
